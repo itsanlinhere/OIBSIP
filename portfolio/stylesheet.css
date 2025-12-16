@@ -208,6 +208,40 @@ h2 {
   resize: vertical;
 }
 
+/* Social icons near contact email */
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  color: var(--accent-dark);
+  background: rgba(70,129,137,0.06);
+  text-decoration: none;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.socials a .icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.socials a:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+  background: rgba(70,129,137,0.12);
+  color: var(--accent);
+}
+
 /* FOOTER */
 footer {
   text-align: center;
