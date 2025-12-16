@@ -1,7 +1,7 @@
 
 /* RESET */
 :root {
-  --bg: #fbfaf8;              /* page background */
+  --bg: url("../portfolio/bg2.jpeg");              /* page background */
   --surface: #ffffff;         /* card / surface */
   --text: #111214;            /* main text */
   --muted: #6b6f72;          /* muted headings */
@@ -22,7 +22,10 @@
 
 body {
   /* Subtle vertical wash using the sampled accent to harmonize with the profile image */
-  background: linear-gradient(180deg, rgba(73, 120, 126, 0.12) 0%, var(--bg) 100%);
+  background:var(--bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
