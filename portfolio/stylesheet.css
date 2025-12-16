@@ -21,7 +21,8 @@
 }
 
 body {
-  background: var(--bg);
+  /* Subtle vertical wash using the sampled accent to harmonize with the profile image */
+  background: linear-gradient(180deg, rgba(92,144,151,0.06) 0%, var(--bg) 100%);
   color: var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
