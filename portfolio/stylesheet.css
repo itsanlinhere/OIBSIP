@@ -22,7 +22,7 @@
 
 body {
   /* Subtle vertical wash using the sampled accent to harmonize with the profile image */
-  background: linear-gradient(180deg, rgba(92,144,151,0.12) 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, rgba(73, 120, 126, 0.12) 0%, var(--bg) 100%);
   color: var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -39,7 +39,7 @@ h2 {
   text-align: center;
   font-size: 1.9rem;
   margin-bottom: 32px;
-  color: var(--muted);
+  color: var(--accent);
   font-weight: 600;
 }
 
@@ -72,7 +72,7 @@ h2 {
   display: inline-block;
   margin-top: 22px;
   padding: 10px 22px;
-  background: var(--accent);
+  background: var(--accent-dark);
   color: #fff;
   border-radius: 999px;
   text-decoration: none;
@@ -113,7 +113,7 @@ h2 {
 }
 
 .box h3 {
-  color: var(--text);
+  color: var(--accent);
   margin-bottom: 8px;
   font-size: 1.05rem;
 }
@@ -151,9 +151,15 @@ h2 {
 }
 
 .project-card h3 {
-  color: var(--text);
+  color: var(--accent);
   margin-bottom: 8px;
   font-size: 1.05rem;
+}
+
+/* experience heading */
+.exp-item h3 {
+  color: var(--accent);
+  margin-bottom: 6px;
 }
 
 .project-card a {
