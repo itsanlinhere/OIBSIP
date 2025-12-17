@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Arial&display=swap');
+body {
+  font-family: 'Arial', sans-serif;
+  background: #9D9167; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.converter {
+  background: #E8D1A7; 
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 6px 15px rgba(68, 45, 28, 0.4);
+  text-align: center;
+}
+
+h2 {
+  color: #442D1C; 
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #84592B; 
+  background: #FFF7E8;
+  color: #442D1C;
+}
+
+input::placeholder {
+  color: #84592B;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #743014;
+  color: #E8D1A7;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #442D1C; 
+}
+
+.result {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #442D1C;
+}
+
+.error {
+  margin-top: 10px;
+  color: #743014;
+  font-size: 14px;
+}

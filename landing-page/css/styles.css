@@ -13,7 +13,6 @@ body {
   align-items: center;
   margin: 0;
   min-height: 100vh;
-  /* soft bluish overlay above the background image (CSS file is in /css/) */
   background-color: #d7dfe6;
   background-image: linear-gradient(rgba(13,67,120,0.25), rgba(13,67,120,0.08)), url("../bloomy.jpeg");
   background-size: cover;
@@ -36,7 +35,6 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 14px;
-  /* elegant Literata heading */
   font-family: 'Literata', 'Quicksand', serif;
   letter-spacing: 0.4px;
   color: #640329;

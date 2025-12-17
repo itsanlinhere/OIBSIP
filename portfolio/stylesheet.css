@@ -1,13 +1,13 @@
 
 /* RESET */
 :root {
-  --bg: url("../portfolio/bg2.jpeg");              /* page background */
-  --surface: #ffffff;         /* card / surface */
-  --text: #111214;            /* main text */
-  --muted: #6b6f72;          /* muted headings */
-  --accent: #468189;         /* accent — sampled from profile.jpg */
-  --accent-dark: #37656b;    /* darker tone */
-  --accent-soft: #5c9097;    /* lighter/soft tone */
+  --bg: url("../portfolio/bg2.jpeg");              
+  --surface: #ffffff;         
+  --text: #111214;            
+  --muted: #6b6f72;          
+  --accent: #468189;         
+  --accent-dark: #37656b;    
+  --accent-soft: #5c9097;  
   --glass: rgba(16,18,19,0.03);
   --radius: 12px;
   --shadow-sm: 0 6px 18px rgba(17,18,20,0.06);
@@ -21,7 +21,6 @@
 }
 
 body {
-  /* Subtle vertical wash using the sampled accent to harmonize with the profile image */
   background:var(--bg);
   background-size: cover;
   background-position: center;
@@ -31,7 +30,6 @@ body {
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* COMMON */
 section {
   padding: 72px 6%;
   max-width: 1100px;
@@ -46,7 +44,6 @@ h2 {
   font-weight: 600;
 }
 
-/* HERO */
 .hero {
   min-height: 70vh;
   display: flex;
@@ -100,7 +97,6 @@ h2 {
   border: 6px solid rgba(255,255,255,0.65);
 }
 
-/* ABOUT */
 .about-boxes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -121,7 +117,6 @@ h2 {
   font-size: 1.05rem;
 }
 
-/* SKILLS */
 .skills {
   display: flex;
   justify-content: center;
@@ -138,7 +133,6 @@ h2 {
   border: 1px solid rgba(16,18,19,0.03);
 }
 
-/* PROJECTS */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -159,7 +153,6 @@ h2 {
   font-size: 1.05rem;
 }
 
-/* experience heading */
 .exp-item h3 {
   color: var(--accent);
   margin-bottom: 6px;
@@ -173,7 +166,6 @@ h2 {
   font-weight: 600;
 }
 
-/* EXPERIENCE */
 .experience {
   background: transparent;
 }
@@ -187,7 +179,6 @@ h2 {
   border: 1px solid rgba(16,18,19,0.03);
 }
 
-/* CONTACT */
 .contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -211,7 +202,6 @@ h2 {
   resize: vertical;
 }
 
-/* Social icons near contact email */
 .socials {
   display: flex;
   gap: 10px;
@@ -245,7 +235,6 @@ h2 {
   color: var(--accent);
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: 28px 6%;
@@ -255,7 +244,6 @@ footer {
   margin-top: 40px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column-reverse;
