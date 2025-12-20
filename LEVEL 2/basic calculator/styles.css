@@ -12,7 +12,8 @@ body {
 .calculator {
     /* use image as the calculator panel background and ensure it covers the panel */
     position: relative;
-    background-image: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url('calbg.jpeg');
+    /* image file is in the same folder as this CSS file */
+    background-image: url('calbg3.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; /* make the image cover the calculator area */
@@ -28,8 +29,8 @@ body {
 }
 
 .display {
-    background-color: #222;
-    color: #fff;
+    background-color: #efe7da;
+    color: #584738;
     font-size: 2rem;
     text-align: right;
     padding: 20px;
@@ -46,7 +47,7 @@ body {
 }
 
 .button {
-    background-color: #666;
+    background-color: #9D6F51;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -65,41 +66,41 @@ body {
 }
 
 .operator {
-    background-color: #ff9500;
+    background-color: #805023;
 }
 
 .operator:hover {
-    background-color: #ffb84d;
+    background-color: #805023;
 }
 
 .operator:active {
-    background-color: #e68a00;
+    background-color: #805023;
 }
 
 .clear {
-    background-color: #a6a6a6;
+    background-color: #A28673;
     color: #000;
 }
 
 .clear:hover {
-    background-color: #b8b8b8;
+    background-color: #A28673;
 }
 
 .clear:active {
-    background-color: #949494;
+    background-color: #A28673;
 }
 
 .equals {
-    background-color: #ff9500;
+    background-color: #805023;
     grid-column: span 2;
 }
 
 .equals:hover {
-    background-color: #ffb84d;
+    background-color: #805023;
 }
 
 .equals:active {
-    background-color: #e68a00;
+    background-color: #805023;
 }
 
 .zero {
@@ -107,14 +108,14 @@ body {
 }
 
 .backspace {
-    background-color: #a6a6a6;
+    background-color: #A28673;
     color: #000;
 }
 
 .backspace:hover {
-    background-color: #b8b8b8;
+    background-color: #A28673;
 }
 
 .backspace:active {
-    background-color: #949494;
+    background-color: #A28673;
 }
