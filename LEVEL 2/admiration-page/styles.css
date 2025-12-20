@@ -192,8 +192,10 @@ footer {
 .swipe-arrow:hover { background:rgba(0,0,0,0.04); }
 .swipe-arrow:active { transform:translateY(1px); }
 .swipe-track { display:flex; overflow:hidden; width:100%; }
-.swipe-track { display:flex; overflow:hidden; width:100%; min-width:0; /* transform-based carousel; JS will set transform */ pointer-events:auto; }
-.swipe-track { transition: transform 300ms ease; will-change: transform; }
+.swipe-track { display:flex; overflow-x:auto; overflow-y:hidden; width:100%; min-width:0; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory; }
+.wipe-hide-scrollbar::-webkit-scrollbar { display: none; }
+.swipe-track { will-change: scroll-position; }
+.swipe-item { scroll-snap-align: start; }
 .swipe-item { min-width:240px; max-width:260px; background:#fff; border-radius:8px; padding:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-right:12px; flex-shrink:0; }
 .swipe-item:focus { outline: 3px solid rgba(70,129,137,0.15); box-shadow:0 6px 22px rgba(70,129,137,0.06); }
 .swipe-arrow:focus { outline:2px solid rgba(70,129,137,0.2); border-radius:6px; }

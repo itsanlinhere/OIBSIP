@@ -47,54 +47,42 @@ document.addEventListener('DOMContentLoaded', function(){
       announcer.textContent = `${title} — ${index+1} of ${items.length}`;
     }
 
-    // arrow handlers
-    prev.addEventListener('click', ()=> snapTo(index-1));
-    next.addEventListener('click', ()=> snapTo(index+1));
+    // arrow handlers — use native scroll to move
+    function scrollToIndex(i){
+      const clamped = Math.max(0, Math.min(items.length-1, i));
+      const left = clamped * itemWidth;
+      track.scrollTo({ left, behavior: 'smooth' });
+      index = clamped;
+      announce();
+    }
+    prev.addEventListener('click', ()=> scrollToIndex(index-1));
+    next.addEventListener('click', ()=> scrollToIndex(index+1));
 
     // keyboard within card: left/right when focus inside
     card.addEventListener('keydown', (e)=>{
-      if(e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
-      if(e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+      if(e.key === 'ArrowLeft') { e.preventDefault(); scrollToIndex(index-1); }
+      if(e.key === 'ArrowRight') { e.preventDefault(); scrollToIndex(index+1); }
     });
 
-    // pointer/touch support
-    let startX = 0, dragging = false;
-
-    function pointerDown(e){
-      dragging = true;
-      track.style.transition = 'none';
-      startX = e.clientX ?? (e.touches && e.touches[0].clientX) ?? 0;
+    // update index when user scrolls (native scrolling / touch)
+    let scrollTimeout;
+    function onScroll(){
+      if(scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(()=>{
+        const scrolled = Math.round(track.scrollLeft / (itemWidth || 1));
+        index = Math.max(0, Math.min(items.length-1, scrolled));
+        announce();
+      }, 80);
     }
-    function pointerMove(e){
-      if(!dragging) return;
-      const currentX = e.clientX ?? (e.touches && e.touches[0].clientX) ?? 0;
-      const delta = currentX - startX;
-      const base = -index * itemWidth;
-      setTransform(base + delta);
-    }
-    function pointerUp(e){
-      if(!dragging) return;
-      dragging = false;
-      const endX = e.clientX ?? (e.changedTouches && e.changedTouches[0].clientX) ?? 0;
-      const delta = endX - startX;
-      const threshold = itemWidth * 0.18;
-      if(delta > threshold) snapTo(index-1);
-      else if(delta < -threshold) snapTo(index+1);
-      else snapTo(index);
-    }
-
-    // attach listeners to the track (pointer) and card (touch fallbacks)
-    track.addEventListener('pointerdown', pointerDown);
-    window.addEventListener('pointermove', pointerMove);
-    window.addEventListener('pointerup', pointerUp);
-
-    track.addEventListener('touchstart', pointerDown, {passive:true});
-    window.addEventListener('touchmove', pointerMove, {passive:true});
-    window.addEventListener('touchend', pointerUp);
+    track.addEventListener('scroll', onScroll, {passive:true});
 
     // init
-    track.style.willChange = 'transform';
-    announce();
-    snapTo(0, false);
+    track.style.willChange = 'scroll-position';
+    // ensure images loaded then recalc and snap
+    window.requestAnimationFrame(()=>{
+      recalc();
+      track.scrollLeft = 0;
+      announce();
+    });
   });
 });
