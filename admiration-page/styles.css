@@ -1,8 +1,11 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background: #f9f9f9;
-  color: #333;
+  --bg: #f9f9f9;
+  --text: #333333;
+  --accent: #004d40;
+  background: var(--bg);
+  color: var(--text);
 }
 
 nav ul {
@@ -12,8 +15,8 @@ nav ul {
   gap: 20px;
   padding: 20px;
   margin: 0;
-  background-color: #004d40;
-  color: white;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 .hero {
@@ -26,20 +29,20 @@ nav ul {
   background-position: center center;
   background-repeat: no-repeat;
   padding: 40px;
-  color: #40110d;
+  color: var(--text);
 }
 
 .highlight {
   font-family: Geeks-for-Geeks, sans-serif;
   font-size: 48px;
-  color: #000f4b;
+  color: var(--text);
   font-weight: bold;
 }
 
 .hero-text h2 {
   font-family: 'Courier New', sans-serif;
   font-size: 1.2em;
-  color: #3e4e66;
+  color: var(--text);
 }
 
 .hero-text button {
@@ -121,6 +124,7 @@ section {
 section h2 {
   font-size: 2em;
   margin-bottom: 20px;
+  color: var(--text);
 }
 
 section img {
@@ -131,7 +135,7 @@ section img {
 }
 
 .discover h2, .author h2, .toc h2 {
-  color: #004d40;
+  color: var(--text);
 }
 
 .toc ul {
@@ -140,8 +144,8 @@ section img {
 }
 
 footer {
-  background-color: #004d40;
-  color: white;
+  background-color: var(--bg);
+  color: var(--text);
   text-align: center;
   padding: 15px;
 }
