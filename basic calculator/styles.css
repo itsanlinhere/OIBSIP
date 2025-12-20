@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    /* page background: subtle neutral gradient (no image) */
+    background: linear-gradient(180deg, #f6f7f9 0%, #eef2f5 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    /* use image as the calculator panel background and ensure it covers the panel */
+    position: relative;
+    background-image: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url('calbg.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* make the image cover the calculator area */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+}
+
+/* ensure child content sits above the background overlay */
+.calculator > * {
+    position: relative;
+}
+
+.display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2rem;
+    text-align: right;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    min-height: 40px;
+    overflow: hidden;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button {
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #777;
+}
+
+.button:active {
+    background-color: #555;
+}
+
+.operator {
+    background-color: #ff9500;
+}
+
+.operator:hover {
+    background-color: #ffb84d;
+}
+
+.operator:active {
+    background-color: #e68a00;
+}
+
+.clear {
+    background-color: #a6a6a6;
+    color: #000;
+}
+
+.clear:hover {
+    background-color: #b8b8b8;
+}
+
+.clear:active {
+    background-color: #949494;
+}
+
+.equals {
+    background-color: #ff9500;
+    grid-column: span 2;
+}
+
+.equals:hover {
+    background-color: #ffb84d;
+}
+
+.equals:active {
+    background-color: #e68a00;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.backspace {
+    background-color: #a6a6a6;
+    color: #000;
+}
+
+.backspace:hover {
+    background-color: #b8b8b8;
+}
+
+.backspace:active {
+    background-color: #949494;
+}
