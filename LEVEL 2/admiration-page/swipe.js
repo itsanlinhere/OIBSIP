@@ -50,9 +50,15 @@ document.addEventListener('DOMContentLoaded', function(){
     // arrow handlers — use native scroll to move
     function scrollToIndex(i){
       const clamped = Math.max(0, Math.min(items.length-1, i));
-      const left = clamped * itemWidth;
+      const target = items[clamped];
+      if(!target) return;
+      // Use the element's offsetLeft so variable widths and gaps are handled correctly
+      const left = target.offsetLeft;
       track.scrollTo({ left, behavior: 'smooth' });
       index = clamped;
+      // move focus to the item for accessibility
+      target.setAttribute('tabindex','0');
+      target.focus({ preventScroll: true });
       announce();
     }
     prev.addEventListener('click', ()=> scrollToIndex(index-1));
@@ -69,8 +75,15 @@ document.addEventListener('DOMContentLoaded', function(){
     function onScroll(){
       if(scrollTimeout) clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(()=>{
-        const scrolled = Math.round(track.scrollLeft / (itemWidth || 1));
-        index = Math.max(0, Math.min(items.length-1, scrolled));
+        // find nearest item by offsetLeft to account for variable widths
+        const left = track.scrollLeft;
+        let nearest = 0;
+        let best = Infinity;
+        items.forEach((it, idx)=>{
+          const d = Math.abs(it.offsetLeft - left);
+          if(d < best){ best = d; nearest = idx; }
+        });
+        index = nearest;
         announce();
       }, 80);
     }
