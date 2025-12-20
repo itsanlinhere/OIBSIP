@@ -188,9 +188,11 @@ footer {
 .lede { color:#444; font-size:1rem; line-height:1.6; margin-bottom:18px; }
 
 .swipe-card { display:flex; align-items:center; gap:12px; }
-.swipe-arrow { background:transparent; border:none; font-size:1.1rem; padding:6px 10px; cursor:pointer; color:#666; }
+.swipe-arrow { background:transparent; border:none; font-size:1.2rem; padding:8px 12px; cursor:pointer; color:#666; display:inline-flex; align-items:center; justify-content:center; border-radius:6px; z-index:5; }
+.swipe-arrow:hover { background:rgba(0,0,0,0.04); }
+.swipe-arrow:active { transform:translateY(1px); }
 .swipe-track { display:flex; overflow:hidden; width:100%; }
-.swipe-track { display:flex; overflow:hidden; width:100%; min-width:0; /* transform-based carousel; JS will set transform */ }
+.swipe-track { display:flex; overflow:hidden; width:100%; min-width:0; /* transform-based carousel; JS will set transform */ pointer-events:auto; }
 .swipe-track { transition: transform 300ms ease; will-change: transform; }
 .swipe-item { min-width:240px; max-width:260px; background:#fff; border-radius:8px; padding:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-right:12px; flex-shrink:0; }
 .swipe-item:focus { outline: 3px solid rgba(70,129,137,0.15); box-shadow:0 6px 22px rgba(70,129,137,0.06); }
