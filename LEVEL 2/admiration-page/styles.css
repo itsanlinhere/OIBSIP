@@ -181,7 +181,14 @@ footer {
 .swipe-card { display:flex; align-items:center; gap:12px; }
 .swipe-arrow { background:transparent; border:none; font-size:1.1rem; padding:6px 10px; cursor:pointer; color:#666; }
 .swipe-track { display:flex; overflow:hidden; width:100%; }
+.swipe-track { display:flex; overflow:hidden; width:100%; /* transform-based carousel; JS will set transform */ }
+.swipe-track { transition: transform 300ms ease; will-change: transform; }
 .swipe-item { min-width:240px; max-width:260px; background:#fff; border-radius:8px; padding:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-right:12px; flex-shrink:0; }
+.swipe-item:focus { outline: 3px solid rgba(70,129,137,0.15); box-shadow:0 6px 22px rgba(70,129,137,0.06); }
+.swipe-arrow:focus { outline:2px solid rgba(70,129,137,0.2); border-radius:6px; }
+
+/* visually hidden (for screen reader announcer) */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .swipe-item img{ width:100%; height:120px; object-fit:cover; border-radius:6px; margin-bottom:8px; }
 .swipe-item h3 { margin:0 0 6px 0; font-size:1.05rem; color:#222; }
 .swipe-item p { color:#555; font-size:0.92rem; }
