@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tribute to Ratan Tata</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-text">
+        <span class="highlight"><center>RATAN TATA - THE LEGEND</center></span>
+      <h2>None can destroy iron, but its own rust can. Likewise, none can destroy a person, but their own mindset can.</h2>
+      <p><strong>- Ratan Tata</strong></p>
+    </div>
+    <div class="hero-image">
+      <img src="https://jiteshmd.com/wp-content/uploads/2024/10/Untitled-design_20241010_030058_0000-1.jpg">
+    </div>
+  </header>
+
+  <!-- Discover Section -->
+  <section class="discover">
+    <h2>Learnings from Ratan Tata Sir:</h2>
+    <p>"You must be the change you wish to see in the world."</p>
+    <p>1. He always puts people first, showing that compassion and business can coexist beautifully.</p>
+    <p>2. His love for nature and animals reflects his deep respect for life.</p>
+    <p>3. Discipline and vision made him a typhoon in the industry.</p>
+  </section>
+
+  <!-- Author Section -->
+  <section class="author">
+    <h2>About Ratan Tata Sir:</h2>
+
+    <!-- Parallax image stack: 3 layered photos moving at different speeds -->
+    <div class="parallax-wrap" aria-hidden="false">
+      <div class="parallax-layer" data-speed="0.12">
+        <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1" alt="portrait layer 1">
+      </div>
+      <div class="parallax-layer" data-speed="0.3">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2" alt="portrait layer 2">
+      </div>
+      <div class="parallax-layer" data-speed="0.6">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3" alt="portrait layer 3">
+      </div>
+    </div>
+
+    <div class="author-content">
+      <p>Ratan Tata is best known as a visionary industrialist and philanthropist. His leadership of Tata Group transformed industries while keeping humanity at the core of progress.</p>
+      <p><strong>Signature Values:</strong> Integrity, Compassion, Discipline</p>
+    </div>
+  </section>
+
+  <!-- Table of Contents Style Section -->
+  <section class="toc">
+    <h2>Highlights of His Life</h2>
+    <ul>
+      <li>Introduction: Humble Beginnings</li>
+      <li>Guiding Principles</li>
+      <li>Love for Nature & Animals</li>
+      <li>Discipline & Daily Routine</li>
+      <li>Industry Impact</li>
+      <li>Philanthropy & Legacy</li>
+    </ul>
+  </section>
+
+  <footer>
+    Made with admiration 💙
+  </footer>
+
+  <script>
+// Multi-layer parallax for .parallax-layer elements
+(function(){
+  const layers = Array.from(document.querySelectorAll('.parallax-layer'));
+  if (!layers.length) return;
+
+  // Disable heavy parallax on small/touch devices
+  const disable = ('ontouchstart' in window) || window.innerWidth < 720;
+  if (disable) return;
+
+  function update() {
+    const viewportH = window.innerHeight;
+    layers.forEach(layer => {
+      const parent = layer.parentElement;
+      const rect = parent.getBoundingClientRect();
+      const progress = (viewportH - rect.top) / (viewportH + rect.height);
+      const p = Math.max(0, Math.min(1, progress));
+      const speed = parseFloat(layer.dataset.speed) || 0.3;
+      // translate range -30px .. 30px scaled by speed
+      const translate = (p - 0.5) * (60 * speed);
+      layer.style.transform = `translateX(-50%) translateY(${translate}px)`;
+    });
+  }
+
+  let ticking = false;
+  function onScroll(){
+    if (!ticking){
+      window.requestAnimationFrame(function(){ update(); ticking = false; });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, {passive: true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>
