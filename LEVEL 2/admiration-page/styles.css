@@ -118,6 +118,15 @@ section {
   margin: auto;
 }
 
+/* Allow the editorial section to be wider than the default section max-width
+   and to scale on small screens. This prevents the layout from appearing "short".
+*/
+.editorial {
+  max-width: 1200px;
+  width: calc(100% - 48px);
+  margin: 24px auto;
+}
+
 section h2 {
   font-size: 2em;
   margin-bottom: 20px;
@@ -171,7 +180,7 @@ footer {
 
 .editorial-main { display:flex; gap:28px; padding:28px; align-items:stretch; }
 .editorial-left { flex:0 0 320px; }
-.tall-image { height:520px; overflow:hidden; border-radius:8px; }
+.tall-image { height: min(520px, 60vh); overflow:hidden; border-radius:8px; }
 .tall-image img { width:100%; height:100%; object-fit:cover; display:block; }
 
 .editorial-right { flex:1; display:flex; flex-direction:column; justify-content:center; }
@@ -181,7 +190,7 @@ footer {
 .swipe-card { display:flex; align-items:center; gap:12px; }
 .swipe-arrow { background:transparent; border:none; font-size:1.1rem; padding:6px 10px; cursor:pointer; color:#666; }
 .swipe-track { display:flex; overflow:hidden; width:100%; }
-.swipe-track { display:flex; overflow:hidden; width:100%; /* transform-based carousel; JS will set transform */ }
+.swipe-track { display:flex; overflow:hidden; width:100%; min-width:0; /* transform-based carousel; JS will set transform */ }
 .swipe-track { transition: transform 300ms ease; will-change: transform; }
 .swipe-item { min-width:240px; max-width:260px; background:#fff; border-radius:8px; padding:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); margin-right:12px; flex-shrink:0; }
 .swipe-item:focus { outline: 3px solid rgba(70,129,137,0.15); box-shadow:0 6px 22px rgba(70,129,137,0.06); }
