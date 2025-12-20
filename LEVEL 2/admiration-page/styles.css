@@ -4,6 +4,8 @@ body {
   --bg: #f9f9f9; /* page background */
   --text: #333333; /* primary text color */
   --accent: #004d40; /* retained accent for buttons */
+  --grad-start: var(--accent);
+  --grad-end: #cfe9e6;
   background: var(--bg);
   color: var(--text);
 }
@@ -187,7 +189,7 @@ section img {
 .editorial-right h2 { margin:0 0 12px 0; font-size:1.8rem; color:var(--text); }
 .lede { color:var(--text); font-size:1rem; line-height:1.6; margin-bottom:18px; }
 
-.swipe-card { display:flex; align-items:center; gap:12px; }
+.swipe-card { display:flex; align-items:center; gap:12px; background: linear-gradient(135deg, var(--grad-start), var(--grad-end)); padding:10px; border-radius:10px; }
 .swipe-arrow { background:transparent; border:none; font-size:1.2rem; padding:8px 12px; cursor:pointer; color:#666; display:inline-flex; align-items:center; justify-content:center; border-radius:6px; z-index:5; }
 .swipe-arrow:hover { background:rgba(0,0,0,0.04); }
 .swipe-arrow:active { transform:translateY(1px); }
@@ -205,6 +207,14 @@ section img {
 .swipe-item img{ width:100%; height:120px; object-fit:cover; border-radius:6px; margin-bottom:8px; }
 .swipe-item h3 { margin:0 0 6px 0; font-size:1.05rem; color:var(--text); }
 .swipe-item p { color:var(--text); font-size:0.92rem; }
+
+/* Footer uses the next shade of the gradient to sit visually below the swipe area */
+footer {
+  background: linear-gradient(180deg, var(--grad-end), var(--bg));
+  color: var(--text);
+  text-align: center;
+  padding: 18px 15px;
+}
 @media (max-width:900px){
   .editorial { flex-direction:column; }
   .editorial-main { flex-direction:column; }
