@@ -1,0 +1,61 @@
+:root{
+  --bg-start: #f7e9f7;
+  --bg-end: #f0dff2;
+  --card-bg: rgba(255,255,255,0.85);
+  --muted: #7b6e7f;
+  --accent: #703b6f;
+  --primary: #2f1b4c;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: linear-gradient(135deg,var(--bg-start),var(--bg-end));
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.auth-page{width:100%; max-width:1100px}
+.auth-card{
+  display:flex;
+  gap:28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 12px 40px rgba(35,22,70,0.12);
+  overflow:hidden;
+}
+
+.auth-visual{flex:1; min-width:320px; display:flex; align-items:center; justify-content:center}
+.auth-visual img{width:100%; max-width:420px; border-radius:14px; object-fit:cover}
+
+.auth-form{flex:1; padding:8px 4px 8px 20px; display:flex; flex-direction:column; justify-content:center}
+.auth-form h2{margin:0 0 6px 0; color:var(--primary); font-size:28px}
+.subtitle{color:var(--muted); margin-bottom:18px}
+
+.field{display:block; margin-bottom:12px}
+.label-text{display:block; font-size:13px; color:var(--muted); margin-bottom:6px}
+.password-wrap{display:flex; gap:8px; align-items:center}
+input[type="email"], input[type="password"]{width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(0,0,0,0.06); background:rgba(255,255,255,0.9); font-size:15px}
+.icon-btn{background:transparent;border:none; cursor:pointer; font-size:16px}
+
+.form-row{display:flex; justify-content:flex-end; margin-bottom:12px}
+.forgot{font-size:13px; color:var(--muted); text-decoration:none}
+
+.btn{display:inline-flex; align-items:center; gap:10px; justify-content:center; padding:12px 18px; border-radius:10px; border:none; cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,#5a2b6f,#8b4b9e); color:white; width:100%; font-weight:600}
+.btn.google{background:transparent; border:1px solid rgba(0,0,0,0.08); padding:10px; border-radius:10px; display:flex; gap:12px; align-items:center; justify-content:center}
+.btn.google img{height:20px; width:20px}
+
+.divider{display:flex; align-items:center; gap:10px; color:var(--muted); margin:14px 0}
+.divider::before, .divider::after{content:''; height:1px; background:rgba(0,0,0,0.06); flex:1}
+.foot{margin-top:12px; font-size:14px; color:var(--muted)}
+
+@media (max-width:900px){
+  .auth-card{flex-direction:column; padding:18px}
+  .auth-visual{order:0}
+}

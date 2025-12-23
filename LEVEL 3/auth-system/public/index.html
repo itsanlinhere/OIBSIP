@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <main class="auth-page">
+            <div class="auth-card">
+                <div class="auth-visual">
+                    <!-- left illustration (uses a remote image as a placeholder) -->
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c1a8d8b1d5b3bb2b1a5b8f0f9a6c6d4" alt="illustration" />
+                </div>
+
+                <section class="auth-form">
+                    <h2>Let's sign you in.</h2>
+                    <p class="subtitle">Hello welcome back to your account</p>
+
+                    <form id="signin-form" novalidate>
+                        <label class="field">
+                            <span class="label-text">Mail id</span>
+                            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+                        </label>
+
+                        <label class="field">
+                            <span class="label-text">Password</span>
+                            <div class="password-wrap">
+                                <input id="password" name="password" type="password" placeholder="Password" required minlength="6" />
+                                <button type="button" id="toggle-pw" class="icon-btn" aria-label="Show password">👁️</button>
+                            </div>
+                        </label>
+
+                        <div class="form-row">
+                            <a href="#" class="forgot">Forget password?</a>
+                        </div>
+
+                        <button class="btn primary" id="signin">Sign in now</button>
+
+                        <div class="divider"><span>or sign in with</span></div>
+
+                        <button type="button" class="btn google" id="google-signin">
+                            <img src="https://www.gstatic.com/devrel-devsite/prod/v0f1b8baf0da8228a64a96b86c09f70f9137bac9c0ed912055e294d9d89c7479a/firebase/images/touchicon-180.png" alt="Google" />
+                            <span>Google</span>
+                        </button>
+
+                        <p class="foot">Don't have an account? <a href="/register">Register</a></p>
+                    </form>
+                </section>
+            </div>
+        </main>
+        <script src="./auth.js" defer></script>
+</body>
+</html>
