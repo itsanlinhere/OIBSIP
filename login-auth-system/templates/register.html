@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Register</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    <main class="center-root" role="main">
+        <section class="auth-card" aria-labelledby="register-title">
+            <h2 id="register-title">Create your account</h2>
+            <p class="auth-sub">Join us to start ordering delicious pizzas.</p>
+
+            {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                            <ul class="flash-list" role="status">
+                                    {% for message in messages %}
+                                            <li>{{ message }}</li>
+                                    {% endfor %}
+                            </ul>
+                    {% endif %}
+            {% endwith %}
+
+            <form method="POST" novalidate aria-describedby="register-help">
+                <div>
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text" required aria-required="true" autocomplete="username">
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" required aria-required="true" autocomplete="new-password">
+                </div>
+
+                <div>
+                    <button class="btn" type="submit">Create account</button>
+                </div>
+            </form>
+
+            <p class="small" id="register-help">Already have an account? <a class="muted-link" href="{{ url_for('login') }}">Sign in</a></p>
+        </section>
+    </main>
+</body>
+</html>

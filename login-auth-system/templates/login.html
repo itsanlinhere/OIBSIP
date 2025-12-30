@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <main class="center-root" role="main">
+      <section class="auth-card" aria-labelledby="login-title">
+        <h2 id="login-title">Sign in to your account</h2>
+        <p class="auth-sub">Welcome back — enter your credentials to continue.</p>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-list" role="status">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" novalidate aria-describedby="login-help">
+            <div>
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" required aria-required="true" autocomplete="username">
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" required aria-required="true" autocomplete="current-password">
+            </div>
+
+            <div>
+                <button class="btn" type="submit">Sign in</button>
+            </div>
+        </form>
+
+        <p class="small" id="login-help">Don't have an account? <a class="muted-link" href="{{ url_for('register') }}">Register</a></p>
+      </section>
+    </main>
+</body>
+</html>
